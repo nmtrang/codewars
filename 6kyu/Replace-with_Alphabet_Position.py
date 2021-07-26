@@ -18,9 +18,17 @@ LETTERS = {letter: str(position)
 
 
 def alphabet_position(text):
-    text = text.lower()
-    numbers = [LETTERS.get(letter) for letter in text if letter in LETTERS]
+    numbers = [LETTERS.get(letter) for letter in text.lower() if letter in LETTERS]
     return ' '.join(numbers)
 
 
 print(alphabet_position("The sunset sets at twelve o' clock"))
+
+"""
+AFTER READING OTHER'S CODE
+One-liner with ord() method
+The ord() method in Python converts a character into 
+its Unicode code value.
+
+return ' '.join(str(ord(c) - 96) for c in text.lower() if c.isalpha())
+"""
